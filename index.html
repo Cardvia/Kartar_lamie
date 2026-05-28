@@ -5,81 +5,109 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <title>Karas Fashion · Digital Card</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    * { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
-    
-    /* تصميم مستوحى من خلفية الكارد الحريرية الداكنة */
     body {
-      background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+      background: radial-gradient(circle at 50% 30%, #1c1a17 0%, #0c0b0a 70%, #050505 100%);
       position: relative;
-      overflow-x: hidden;
+      min-height: screen;
+      color: #f5f2eb;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
     }
 
-    /* إضافة الخطوط الذهبية الجانبية الفخمة الموجودة في الكارد */
+    /* الخطوط الكلاسيكية الطولية المطلية بالذهب الحقيقي من الكارد الفعلي */
     body::before {
       content: '';
       position: fixed;
       top: 0;
-      left: 20px;
-      width: 4px;
+      left: 6%;
+      width: 3px;
       height: 100%;
-      background: linear-gradient(to bottom, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
-      opacity: 0.4;
-      z-index: 0;
+      background: linear-gradient(to bottom, #9a7432 0%, #fcf6ba 30%, #c59b27 55%, #fdf8c7 85%, #9a7432 100%);
+      box-shadow: 0 0 10px rgba(197, 155, 39, 0.3);
+      opacity: 0.6;
+      z-index: 1;
     }
     body::after {
       content: '';
       position: fixed;
       top: 0;
-      left: 32px;
-      width: 2px;
+      left: calc(6% + 10px);
+      width: 1.5px;
       height: 100%;
-      background: linear-gradient(to bottom, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
-      opacity: 0.3;
-      z-index: 0;
+      background: linear-gradient(to bottom, #9a7432 0%, #fcf6ba 20%, #c59b27 50%, #fdf8c7 80%, #9a7432 100%);
+      box-shadow: 0 0 8px rgba(197, 155, 39, 0.2);
+      opacity: 0.4;
+      z-index: 1;
     }
 
-    .glass-card {
-      background: rgba(15, 15, 15, 0.85);
-      backdrop-filter: blur(20px) saturate(120%);
-      -webkit-backdrop-filter: blur(20px) saturate(120%);
-      border: 1px solid rgba(191, 149, 63, 0.2);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    /* العناوين الكلاسيكية الفخمة الـ Serif */
+    .classical-font {
+      font-family: 'Cinzel', 'Times New Roman', serif;
+      letter-spacing: 0.05em;
     }
+
+    /* الكارد الزجاجي الداكن الفخم مع تأثير الظلال الملكية */
+    .premium-card {
+      background: linear-gradient(145deg, rgba(20, 19, 17, 0.95) 0%, rgba(10, 10, 9, 0.98) 100%);
+      border: 1px solid rgba(197, 155, 39, 0.25);
+      box-shadow: 
+        0 0 1px 1px rgba(253, 248, 199, 0.1) inset,
+        0 25px 60px -15px rgba(0, 0, 0, 0.95);
+      position: relative;
+    }
+
+    /* إطار داخلي كلاسيكي رفيع لإضفاء الطابع الملكي */
+    .inner-border {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      border: 1px solid rgba(197, 155, 39, 0.12);
+      pointer-events: none;
+      border-radius: 20px;
+    }
+
+    /* تأثير اللمعان المعدني الفاخر على الأزرار عند التمرير */
+    .gold-shimmer-btn {
+      background: linear-gradient(135deg, #a37c3f 0%, #d1b46a 25%, #b38938 50%, #e6d299 75%, #a37c3f 100%);
+      color: #000000;
+      font-weight: 700;
+      text-shadow: 0 0.5px 1px rgba(255, 255, 255, 0.4);
+      box-shadow: 0 4px 20px rgba(163, 124, 63, 0.25);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .gold-shimmer-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(209, 180, 106, 0.45);
+      filter: brightness(1.08);
+    }
+
+    .contact-item-link {
+      background: rgba(25, 24, 22, 0.6);
+      border: 1px solid rgba(197, 155, 39, 0.15);
+      transition: all 0.3s ease;
+    }
+    .contact-item-link:hover {
+      background: rgba(197, 155, 39, 0.06);
+      border-color: rgba(197, 155, 39, 0.4);
+      transform: translateX(3px);
+    }
+
     .fade-in {
-      animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: fadeIn 0.9s cubic-bezier(0.25, 1, 0.5, 1);
     }
     @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(12px); }
+      0% { opacity: 0; transform: translateY(20px); }
       100% { opacity: 1; transform: translateY(0); }
-    }
-    .btn-shine {
-      position: relative;
-      overflow: hidden;
-    }
-    .btn-shine::after {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-      transform: rotate(45deg);
-      transition: all 0.6s ease;
-      opacity: 0;
-    }
-    .btn-shine:hover::after {
-      opacity: 1;
-      left: 100%;
     }
   </style>
 </head>
-<body class="text-white min-h-screen flex items-center justify-center p-4 relative z-10">
+<body class="min-h-screen flex items-center justify-center p-4 sm:p-6">
 
-  <div id="root" class="w-full max-w-md mx-auto fade-in relative z-10"></div>
+  <div id="root" class="w-full max-w-md mx-auto fade-in z-10"></div>
 
   <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js" crossorigin></script>
@@ -88,50 +116,37 @@
   <script type="text/babel">
     const { useState, useEffect } = React;
 
-    // ====== CONFIGURATION ======
     const CONFIG = {
-      // ---------- البيانات الشخصية المستخرجة من الكارد ----------
-      fullName: 'Kartar Lamie',
+      // ---------- بيانات صاحب الكارد المستخرجة من الصورة ----------
+      fullName: 'KARTAR LAMIE',
       jobTitle: 'Founder of Karas Fashion',
-      arabicTitle: 'براند ملابس كـاراس',
-      bio: 'Premium Clothing Brand & Luxury Fashion Designs.',
+      arabicTitle: 'مؤسس براند كاراس للأزياء',
+      bio: 'High-End Luxury Fashion Design & Premium Apparel.',
 
-      // ---------- الصور وشعار البراند ----------
-      // يمكنك استبدال الرابط أدناه بلوجو الصقر والتاج الخاص بك ليكون هو الصورة الشخصية الترحيبية
-      profileImage: 'https://via.placeholder.com/400/0a0a0a/dfb743?text=KARAS', 
+      // شعار براند الصقر والتاج الخاص بك أو صورة العرض الشخصية
+      profileImage: 'https://via.placeholder.com/400/0c0b0a/c59b27?text=KARAS', 
       profileImageSize: 'w-32 h-32 sm:w-36 sm:h-36',
-      // صورة الغلاف (يمكن وضع خلفية سوداء سادة أو صورة فوتوغرافية للبراند)
-      coverImage: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop',
+      coverImage: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&auto=format&fit=crop',
 
-      // ---------- أزرار التواصل المستخرجة من الكارد ----------
       contacts: [
-        { icon: 'fa-solid fa-phone', label: 'Call Us', url: 'tel:+201234567890' },
+        { icon: 'fa-solid fa-phone', label: 'Call Business', url: 'tel:+201234567890' },
         { icon: 'fa-brands fa-whatsapp', label: 'WhatsApp', url: 'https://wa.me/201234567890' },
-        { icon: 'fa-regular fa-envelope', label: 'Email Business', url: 'mailto:Example@domin' },
-        { icon: 'fa-solid fa-globe', label: 'Visit Website', url: 'https://www.Domin' },
+        { icon: 'fa-regular fa-envelope', label: 'Email Address', url: 'mailto:Example@domin' },
+        { icon: 'fa-solid fa-globe', label: 'Official Website', url: 'https://www.Domin' },
       ],
       
-      // ---------- روابط التواصل الاجتماعي ----------
       socials: [
         { icon: 'fa-brands fa-instagram', url: '#', label: 'Instagram' },
         { icon: 'fa-brands fa-facebook', url: '#', label: 'Facebook' },
         { icon: 'fa-brands fa-tiktok', url: '#', label: 'TikTok' }
       ],
 
-      // ---------- الألوان الذهبية والملكية المتوافقة مع الكارد ----------
       colors: {
-        cardBg: '15, 15, 15',               // أسود داكن جداً
-        textPrimary: '#fcf6ba',             // ذهبي عاجي فاتح جداً لسهولة القراءة
-        textSecondary: '#dfb743',           // ذهبي ملكي متناسق مع الكارد
-        textMuted: '#a6a6a6',               // رمادي فضي ناعم للنصوص الفرعية
-        buttonBg: 'linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%)', // تدرج ذهبي ميتاليك فخم للأزرار الرئيسية
-        buttonText: '#000000',              // نص أسود فوق الأزرار الذهبية ليعطي تباين فاخر
-        socialIcon: '#dfb743',              // أيقونات ذهبية
-        footerText: '#737373',              // رمادي هادئ للتذييل
-        border: '191, 149, 63',             // حدود ذهبية ناعمة برقم الـ RGB
+        textPrimary: '#fbf5b7',   // لون ذهبي ناعم وواضح للنصوص الفرعية والوصف
+        textSecondary: '#c59b27', // لون ذهبي ملكي عميق للأيقونات والعناوين الهامة
+        textMuted: '#bdae93',     // رمادي دافئ كلاسيكي مائل للبيج الهادئ
       },
 
-      // ---------- بيانات vCard للحفظ على الهاتف ----------
       vCard: {
         fn: 'Kartar Lamie (Karas Fashion)',
         org: 'Karas Fashion',
@@ -141,27 +156,11 @@
         url: 'www.Domin'
       },
 
-      // ---------- رقم واتساب لطلب بطاقة كارد فيا ----------
       whatsappRequestNumber: '+201090225298',
     };
 
-    const trackClick = (label) => {
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'button_click', { event_category: 'engagement', event_label: label });
-      }
-    };
-
     const downloadVcard = () => {
-      trackClick('download_vcard');
-      const vcard = `BEGIN:VCARD
-VERSION:3.0
-FN:${CONFIG.vCard.fn || CONFIG.fullName}
-ORG:${CONFIG.vCard.org}
-TITLE:${CONFIG.vCard.title}
-TEL:${CONFIG.vCard.tel}
-EMAIL:${CONFIG.vCard.email}
-URL:${CONFIG.vCard.url}
-END:VCARD`;
+      const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:${CONFIG.vCard.fn}\nORG:${CONFIG.vCard.org}\nTITLE:${CONFIG.vCard.title}\nTEL:${CONFIG.vCard.tel}\nEMAIL:${CONFIG.vCard.email}\nURL:${CONFIG.vCard.url}\nEND:VCARD`;
       const blob = new Blob([vcard], { type: 'text/vcard' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
@@ -177,126 +176,110 @@ END:VCARD`;
       const colors = CONFIG.colors;
 
       return (
-        <div 
-          className="glass-card rounded-3xl overflow-hidden transition-all duration-500"
-          style={{
-            backgroundColor: `rgba(${colors.cardBg}, 0.9)`,
-            borderColor: `rgba(${colors.border}, 0.3)`,
-          }}
-        >
-          {/* الغلاف الإعلاني */}
-          <div className="relative h-48 sm:h-56 mt-0 bg-cover bg-center" style={{ backgroundImage: `url('${CONFIG.coverImage}')` }}>
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] to-transparent"></div>
-            {/* الصورة الشخصية / اللوجو */}
-            <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2">
-              <div className={`${CONFIG.profileImageSize} rounded-full border-2 shadow-2xl overflow-hidden bg-[#0a0a0a]`} 
-                   style={{ borderColor: '#dfb743' }}>
+        <div className="premium-card rounded-3xl overflow-hidden p-1">
+          {/* الإطار الكلاسيكي الملكي الداخلي الفخم */}
+          <div className="inner-border"></div>
+
+          {/* هيدر الغلاف المعتم ليعكس غموض وهيبة الفخامة */}
+          <div className="relative h-44 sm:h-48 bg-cover bg-center" style={{ backgroundImage: `url('${CONFIG.coverImage}')` }}>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a09] via-black/60 to-black/40"></div>
+            
+            {/* الصورة الشخصية المؤطرة ببرواز ذهبي بارز ومشع */}
+            <div className="absolute -bottom-14 left-1/2 transform -translate-x-1/2">
+              <div className={`${CONFIG.profileImageSize} rounded-full border-[3px] shadow-2xl overflow-hidden bg-[#0a0a09]`} 
+                   style={{ borderColor: '#c59b27', boxShadow: '0 0 20px rgba(197, 155, 39, 0.4)' }}>
                 <img 
                   src={CONFIG.profileImage} 
                   alt={CONFIG.fullName}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover filter brightness-95"
                   onError={(e) => e.target.src = 'https://via.placeholder.com/400?text=KARAS'}
                 />
               </div>
             </div>
           </div>
 
-          {/* المحتوى الرئيسي */}
-          <div className="pt-16 sm:pt-20 pb-6 px-5 sm:px-6 space-y-6">
-            {/* الاسم واللقب والبراند */}
-            <div className="text-center space-y-1">
-              <h1 className="text-3xl sm:text-4xl font-extrabold tracking-wide" style={{ color: colors.textPrimary }}>
+          {/* محتويات الكارد */}
+          <div className="pt-16 sm:pt-20 pb-8 px-6 sm:px-8 space-y-7 relative z-10">
+            
+            {/* الاسم الفخم بالخط الكلاسيكي واللقب الملكي */}
+            <div className="text-center space-y-2">
+              <h1 className="classical-font text-2xl sm:text-3xl font-black tracking-widest bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#aa771c] bg-clip-text text-transparent">
                 {CONFIG.fullName}
               </h1>
-              <h2 className="text-md sm:text-lg font-medium tracking-wider uppercase opacity-90" style={{ color: colors.textSecondary }}>
+              <div className="h-[1px] w-16 bg-gradient-to-r from-transparent via-[#c59b27] to-transparent mx-auto my-1"></div>
+              <h2 className="text-xs sm:text-sm font-semibold uppercase tracking-[0.22em]" style={{ color: colors.textSecondary }}>
                 {CONFIG.jobTitle}
               </h2>
-              <p className="text-sm sm:text-base font-normal opacity-75 mt-1" dir="rtl" style={{ color: colors.textMuted }}>
+              <p className="text-sm font-medium tracking-wide opacity-85 pt-1" dir="rtl" style={{ color: colors.textMuted }}>
                 {CONFIG.arabicTitle}
               </p>
             </div>
 
-            {/* نبذة عن البراند */}
+            {/* سيرة قصيرة مقتبسة بأناقة دار أزياء */}
             {CONFIG.bio && (
-              <p className="text-center text-[14px] leading-relaxed px-4 border-l-2 border-r-2 border-[#dfb743]/30" style={{ color: colors.textMuted }}>
-                {CONFIG.bio}
+              <p className="text-center text-[13px] italic font-light tracking-wide px-4 max-w-xs mx-auto opacity-85" style={{ color: colors.textMuted }}>
+                " {CONFIG.bio} "
               </p>
             )}
 
-            {/* قائمة أزرار الاتصال الفاخرة */}
-            <div className="grid grid-cols-1 gap-3 pt-2">
+            {/* الروابط وأزرار الاتصال المصممة كخطوط كلاسيكية مستقيمة وأنيقة */}
+            <div className="space-y-3 pt-1">
               {CONFIG.contacts.map((btn, idx) => (
                 <a
                   key={idx}
                   href={btn.url}
                   target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-4 px-5 py-3.5 rounded-xl font-medium transition-all hover:scale-[1.01] active:scale-[0.99] btn-shine"
-                  style={{
-                    backgroundColor: 'rgba(255, 255, 255, 0.03)',
-                    border: `1px solid rgba(${colors.border}, 0.15)`,
-                    color: '#ffffff',
-                  }}
-                  onClick={() => trackClick(`contact_${btn.label}`)}
-                  aria-label={btn.label}
+                  className="contact-item-link flex items-center gap-4 px-5 py-4 rounded-xl font-medium"
                 >
-                  <i className={`${btn.icon} text-xl w-6`} style={{ color: colors.textSecondary }}></i>
-                  <span className="flex-1 text-left text-sm tracking-wide">{btn.label}</span>
-                  <i className="fa-solid fa-chevron-right text-xs opacity-40" style={{ color: colors.textSecondary }}></i>
+                  <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-white/[0.02] border border-[#c59b27]/20">
+                    <i className={`${btn.icon} text-lg`} style={{ color: colors.textSecondary }}></i>
+                  </div>
+                  <span className="flex-1 text-left text-xs uppercase tracking-[0.15em] font-medium text-white/90">{btn.label}</span>
+                  <i className="fa-solid fa-angle-right text-xs opacity-35" style={{ color: colors.textSecondary }}></i>
                 </a>
               ))}
             </div>
 
-            {/* أيقونات التواصل الاجتماعي السفلية */}
-            <div className="flex justify-center items-center gap-6 pt-2">
+            {/* السوشيال ميديا المحاطة بحلقات مذهبة ناعمة */}
+            <div className="flex justify-center items-center gap-5 pt-1">
               {CONFIG.socials.map((social, idx) => (
                 <a
                   key={idx}
                   href={social.url}
                   target="_blank" rel="noopener noreferrer"
-                  className="text-2xl hover:scale-110 transition-transform p-2 bg-white/5 rounded-full border border-white/10"
-                  style={{ color: colors.socialIcon }}
-                  onClick={() => trackClick(`social_${social.label}`)}
+                  className="w-11 h-11 flex items-center justify-center rounded-full bg-white/[0.01] border border-[#c59b27]/20 hover:border-[#c59b27]/60 hover:bg-[#c59b27]/5 hover:scale-105 transition-all duration-300"
+                  style={{ color: colors.textSecondary }}
                   aria-label={social.label}
                 >
-                  <i className={social.icon}></i>
+                  <i className={`${social.icon} text-lg`}></i>
                 </a>
               ))}
             </div>
 
-            {/* أزرار الإجراءات الرئيسية الملونة بالذهبي الميتاليك */}
-            <div className="flex flex-col items-center gap-4 pt-2">
-              {/* حفظ جهة الاتصال */}
+            {/* الأزرار المعدنية العريضة والذهبية اللامعة في الأسفل */}
+            <div className="space-y-4 pt-2">
               <button
                 onClick={downloadVcard}
-                className="w-full flex items-center justify-center gap-3 px-5 py-4 rounded-xl font-bold shadow-xl hover:brightness-110 transition-all btn-shine"
-                style={{
-                  background: colors.buttonBg,
-                  color: colors.buttonText,
-                }}
+                className="gold-shimmer-btn w-full flex items-center justify-center gap-3 px-5 py-4 rounded-xl text-xs uppercase tracking-[0.2em] shadow-2xl"
               >
-                <i className="fa-solid fa-address-card text-lg"></i>
-                <span className="tracking-wide text-sm uppercase">Save Contact</span>
+                <i className="fa-solid fa-id-badge text-sm"></i>
+                <span>Save Contact</span>
               </button>
 
-              {/* طلب الكارد الخاص بك */}
               <a
                 href={`https://wa.me/${CONFIG.whatsappRequestNumber}`}
                 target="_blank" rel="noopener noreferrer"
-                onClick={() => trackClick('request_card_whatsapp')}
-                className="w-full flex items-center justify-center gap-3 px-5 py-3.5 rounded-xl font-semibold border transition-all hover:bg-white/5"
-                style={{
-                  borderColor: `rgba(${colors.border}, 0.5)`,
-                  color: colors.textSecondary,
-                }}
+                className="w-full flex items-center justify-center gap-3 px-5 py-3.5 rounded-xl text-xs uppercase tracking-[0.15em] font-medium border border-[#c59b27]/40 text-[#fbf5b7] bg-white/[0.02] hover:bg-white/[0.05] transition-all"
               >
-                <i className="fa-regular fa-id-card text-lg"></i>
-                <span className="text-sm tracking-wide">Get Your Digital Card</span>
+                <i className="fa-regular fa-id-card text-sm"></i>
+                <span>Request Digital Card</span>
               </a>
             </div>
 
-            {/* التذييل المتناسق */}
-            <div className="pt-4 text-center">
-              <span className="text-[0.65rem] font-medium tracking-[0.3em]" style={{ color: colors.footerText }}>
+            {/* التذييل الفاخر بمظهر العلامات الفنية المرموقة */}
+            <div className="pt-2 text-center">
+              <div className="h-[1px] w-24 bg-gradient-to-r from-transparent via-white/10 to-transparent mx-auto mb-3"></div>
+              <span className="text-[0.6rem] font-bold tracking-[0.25em] text-white/40 uppercase">
                 POWERED BY CARDVIA
               </span>
             </div>
